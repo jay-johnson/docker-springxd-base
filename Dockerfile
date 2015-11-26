@@ -8,18 +8,18 @@ RUN groupadd -r springxd && useradd -r -g springxd springxd
 
 RUN apt-get update && apt-get install -y net-tools curl rsync wget unzip zip
 
-RUN wget http://repo.spring.io/libs-release/org/springframework/xd/spring-xd/1.3.0.RELEASE/spring-xd-1.3.0.RELEASE-dist.zip \
-      -O /opt/spring-xd-1.3.0.RELEASE-dist.zip \
-    && unzip /opt/spring-xd-1.3.0.RELEASE-dist.zip -d /opt/ \
-    && rm /opt/spring-xd-1.3.0.RELEASE-dist.zip \
-    && /opt/spring-xd-1.3.0.RELEASE/zookeeper/bin/install-zookeeper \
-    && chown -R springxd:springxd /opt/spring-xd-1.3.0.RELEASE \
-    && ln -s /opt/spring-xd-1.3.0.RELEASE /opt/spring-xd
+RUN wget http://repo.spring.io/libs-release/org/springframework/xd/spring-xd/${XD_VERSION}/spring-xd-${XD_VERSION}-dist.zip \
+      -O /opt/spring-xd-${XD_VERSION}-dist.zip \
+    && unzip /opt/spring-xd-${XD_VERSION}-dist.zip -d /opt/ \
+    && rm /opt/spring-xd-${XD_VERSION}-dist.zip \
+    && /opt/spring-xd-${XD_VERSION}/zookeeper/bin/install-zookeeper \
+    && chown -R springxd:springxd /opt/spring-xd-${XD_VERSION} \
+    && ln -s /opt/spring-xd-${XD_VERSION} /opt/spring-xd
 
 USER springxd
 
-RUN mkdir /opt/spring-xd-1.3.0.RELEASE/xd/data \
-      && mkdir /opt/spring-xd-1.3.0.RELEASE/xd/custom-modules
+RUN mkdir /opt/spring-xd-${XD_VERSION}/xd/data \
+      && mkdir /opt/spring-xd-${XD_VERSION}/xd/custom-modules
 
 WORKDIR /opt/spring-xd
 
