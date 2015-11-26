@@ -1,5 +1,7 @@
 #### Spring XD Base in a Docker container
 
+[![Travis](https://travis-ci.org/jay-johnson/docker-springxd-base.svg)](https://travis-ci.org/jay-johnson/docker-springxd-base.svg)
+
 This repository allows for auto publishing changes to this Dockerfile to Docker Hub through Travis CI.
 
 ##### Currently using [Spring 1.3.0.RELEASE](http://docs.spring.io/spring-xd/docs/1.3.0.RELEASE/reference/html/)
@@ -19,6 +21,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-
  
